@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            BMI calculator
+        </title>
+        <style>
+            input{
+                font-size: medium;
+                display: block;
+            }
+
+            button{
+                display: block;
+                font-size: medium;
+            }
+        </style>
+    </head>
+
+    <body>
+        <input class = "height" placeholder="Please enter height(cm)">
+        <input class = "weight" placeholder="Please enter weight(kg)">
+        <button onclick="calculateBMI();">Calculate BMI</button>
+
+        <p class = "bmi"></p>
+    </body>
+
+    <script>
+        function calculateBMI(){
+            let height = document.querySelector(".height").value;
+            let weight = document.querySelector(".weight").value;
+            height = Number(height);
+            weight = Number(weight);
+            let bmivalue = Math.round((weight/((height/100)* (height/100)))*10)/10;
+            document.querySelector(".bmi").innerHTML = `<br>
+            Your bmi value is : ${bmivalue}`;
+        }
+
+    </script>
+</html>
